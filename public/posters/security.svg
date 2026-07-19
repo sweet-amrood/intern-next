@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" fill="none">
+  <defs>
+    <linearGradient id="bg-security" x1="0" y1="0" x2="640" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e1210"/><stop offset="1" stop-color="#1a2c20"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" fill="url(#bg-security)"/>
+  <path d="M320 55l110 45v70c0 68-48 110-110 130-62-20-110-62-110-130V100l110-45z" fill="#122018" stroke="#43A724" stroke-width="3"/>
+  <path d="M320 100v90M275 145h90" stroke="#43A724" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="320" cy="190" r="18" fill="none" stroke="#43A724" stroke-width="4"/>
+  <rect x="80" y="70" width="90" height="28" rx="8" fill="#43A724" opacity=".25"/>
+  <rect x="470" y="70" width="90" height="28" rx="8" fill="#43A724" opacity=".25"/>
+  <text x="72" y="290" fill="#9fbfa6" font-family="Arial,sans-serif" font-size="18" font-weight="700">SECURITY · SOC · DEFENSE</text>
+</svg>

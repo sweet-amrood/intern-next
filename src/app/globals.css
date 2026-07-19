@@ -1,26 +1,227 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7faf5;
+  --foreground: #121212;
+  --surface: #ffffff;
+  --surface-2: #eef2ec;
+  --muted: #5c6b5e;
+  --border: #e2ebe3;
+  --brand: #43a724;
+  --brand-dark: #30781a;
+  --brand-soft: #eef8ea;
+  --ink: #121212;
+  --ink-soft: #171717;
+  --dark: #121212;
+  --dark-elevated: #1a1a1a;
+  --dark-border: #2a2a2a;
+  --success: #43a724;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --mesh-a: rgba(67, 167, 36, 0.18);
+  --mesh-b: rgba(18, 18, 18, 0.06);
+  --mesh-base-start: #f7faf5;
+  --mesh-base-mid: #ffffff;
+  --mesh-base-end: #f3f7f1;
+  --navbar: rgba(255, 255, 255, 0.9);
+  --navbar-idle: rgba(255, 255, 255, 0.72);
+  --overlay: rgba(18, 18, 18, 0.45);
+  --shadow-soft: 0 24px 60px -28px rgba(67, 167, 36, 0.35);
+}
+
+.dark {
+  --background: #0e1210;
+  --foreground: #e8efe6;
+  --surface: #161b18;
+  --surface-2: #121714;
+  --muted: #9aab9c;
+  --border: #2a332c;
+  --brand: #4cbe2e;
+  --brand-dark: #3da024;
+  --brand-soft: #1a2e1c;
+  --ink: #f2f5f1;
+  --ink-soft: #d7e0d6;
+  --dark: #0a0c0b;
+  --dark-elevated: #1a211c;
+  --dark-border: #2d3830;
+  --success: #4cbe2e;
+  --warning: #f59e0b;
+  --danger: #f87171;
+  --mesh-a: rgba(76, 190, 46, 0.16);
+  --mesh-b: rgba(76, 190, 46, 0.06);
+  --mesh-base-start: #0e1210;
+  --mesh-base-mid: #121714;
+  --mesh-base-end: #0e1210;
+  --navbar: rgba(22, 27, 24, 0.92);
+  --navbar-idle: rgba(22, 27, 24, 0.78);
+  --overlay: rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 24px 60px -28px rgba(0, 0, 0, 0.55);
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-dark: var(--dark);
+  --color-dark-elevated: var(--dark-elevated);
+  --color-dark-border: var(--dark-border);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 35%, transparent);
+  color: var(--ink);
+}
+
+.container-page {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+.bg-mesh {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, var(--mesh-a), transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 10%, var(--mesh-b), transparent 50%),
+    linear-gradient(180deg, var(--mesh-base-start) 0%, var(--mesh-base-mid) 45%, var(--mesh-base-end) 100%);
+}
+
+.bg-dark-mesh {
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 0%, rgba(67, 167, 36, 0.22), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 85% 80%, rgba(67, 167, 36, 0.08), transparent 50%),
+    var(--dark);
+}
+
+.bg-navbar {
+  background: var(--navbar-idle);
+}
+
+.bg-navbar-scrolled {
+  background: var(--navbar);
+}
+
+.bg-overlay {
+  background: var(--overlay);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease-out both;
+}
+
+.animate-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.animate-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.animate-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.auth-stage {
+  background:
+    radial-gradient(ellipse 90% 70% at 8% -10%, var(--mesh-a), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 95% 20%, color-mix(in srgb, var(--brand) 12%, transparent), transparent 55%),
+    linear-gradient(165deg, var(--mesh-base-start) 0%, var(--mesh-base-mid) 42%, var(--mesh-base-end) 100%);
+}
+
+.auth-stage-glow {
+  background:
+    radial-gradient(circle at 30% 80%, color-mix(in srgb, var(--brand) 10%, transparent), transparent 40%),
+    radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--brand) 8%, transparent), transparent 35%);
+}
+
+.auth-stage-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 70% at 40% 40%, black, transparent);
+}
+
+.auth-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.auth-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: auth-marquee 28s linear infinite;
+}
+
+@keyframes auth-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.auth-form-panel input {
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-marquee-track {
+    animation: none;
+  }
 }

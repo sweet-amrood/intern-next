@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" fill="none">
+  <defs>
+    <linearGradient id="bg-flutter" x1="0" y1="0" x2="640" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f1520"/><stop offset="1" stop-color="#163528"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" fill="url(#bg-flutter)"/>
+  <rect x="230" y="40" width="180" height="240" rx="28" fill="#101820" stroke="#43A724" stroke-width="3"/>
+  <rect x="248" y="68" width="144" height="176" rx="8" fill="#16261a"/>
+  <circle cx="320" cy="262" r="10" fill="#43A724"/>
+  <rect x="300" y="52" width="40" height="6" rx="3" fill="#2d4a32"/>
+  <path d="M280 120c20-28 60-28 80 0M270 150c28-36 72-36 100 0" stroke="#43A724" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="320" cy="165" r="10" fill="#43A724"/>
+  <text x="72" y="290" fill="#9fbfa6" font-family="Arial,sans-serif" font-size="18" font-weight="700">FLUTTER · DART · MOBILE</text>
+</svg>

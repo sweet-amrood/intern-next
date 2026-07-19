@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" fill="none">
+  <defs>
+    <linearGradient id="bg-cloud" x1="0" y1="0" x2="640" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0e1520"/><stop offset="1" stop-color="#163528"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" fill="url(#bg-cloud)"/>
+  <ellipse cx="320" cy="160" rx="150" ry="55" fill="none" stroke="#43A724" stroke-width="3"/>
+  <ellipse cx="320" cy="160" rx="95" ry="35" fill="none" stroke="#43A724" stroke-width="2" opacity=".6"/>
+  <circle cx="320" cy="160" r="18" fill="#43A724"/>
+  <path d="M170 120c40-50 260-50 300 0M170 200c40 50 260 50 300 0" stroke="#2d4a32" stroke-width="2"/>
+  <rect x="80" y="70" width="70" height="24" rx="8" fill="#101c13" stroke="#43A724"/><text x="92" y="87" fill="#43A724" font-size="12" font-family="Arial" font-weight="700">AWS</text>
+  <rect x="490" y="70" width="70" height="24" rx="8" fill="#101c13" stroke="#43A724"/><text x="505" y="87" fill="#43A724" font-size="12" font-family="Arial" font-weight="700">CLOUD</text>
+  <text x="72" y="290" fill="#9fbfa6" font-family="Arial,sans-serif" font-size="18" font-weight="700">CLOUD · COMPUTE · DEPLOY</text>
+</svg>

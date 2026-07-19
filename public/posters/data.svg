@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" fill="none">
+  <defs>
+    <linearGradient id="bg-data" x1="0" y1="0" x2="640" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f1418"/><stop offset="1" stop-color="#173226"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="320" fill="url(#bg-data)"/>
+  <rect x="90" y="200" width="36" height="40" rx="4" fill="#43A724" opacity=".4"/>
+  <rect x="140" y="160" width="36" height="80" rx="4" fill="#43A724" opacity=".55"/>
+  <rect x="190" y="120" width="36" height="120" rx="4" fill="#43A724" opacity=".7"/>
+  <rect x="240" y="90" width="36" height="150" rx="4" fill="#43A724"/>
+  <circle cx="430" cy="140" r="70" fill="none" stroke="#43A724" stroke-width="3"/>
+  <path d="M390 160 Q430 90 470 150" stroke="#9fbfa6" stroke-width="3" fill="none"/>
+  <circle cx="390" cy="160" r="5" fill="#43A724"/><circle cx="430" cy="110" r="5" fill="#43A724"/><circle cx="470" cy="150" r="5" fill="#43A724"/>
+  <text x="72" y="290" fill="#9fbfa6" font-family="Arial,sans-serif" font-size="18" font-weight="700">DATA · PYTHON · ANALYTICS</text>
+</svg>
