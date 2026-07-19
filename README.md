@@ -9,21 +9,29 @@ Next.js rebuild of [Intern Next](https://www.internee.pk/) covering the homepage
 - MongoDB (Mongoose) for users + auth-related data
 - Marketing content still mocked in `src/data/`
 
-## MongoDB + Compass
+## MongoDB Atlas
 
-1. Install and start MongoDB locally (or use Atlas).
-2. Open **MongoDB Compass** and connect to:
+This project uses **MongoDB Atlas** (cloud). You can still browse data with **MongoDB Compass** by pasting the same Atlas URI into Compass.
+
+1. Create a free cluster at [https://cloud.mongodb.com](https://cloud.mongodb.com)
+2. **Database Access** → create a database user (username + password). Save the password.
+3. **Network Access** → Add IP Address → allow your current IP (or `0.0.0.0/0` for local dev only).
+4. **Database** → **Connect** → **Drivers** → copy the URI.
+5. Replace `<password>` with your DB user password (URL-encode special characters).
+6. Set the database name to `internee` (or keep `/internee` in the path):
 
 ```text
-mongodb://127.0.0.1:27017
+mongodb+srv://USER:PASSWORD@CLUSTER.mongodb.net/internee?retryWrites=true&w=majority
 ```
 
-3. After signup, open database `internee` → collection `users`.
-4. Copy `.env.example` to `.env.local` (already defaults to local Mongo):
+7. Put that string in `.env.local` as `MONGODB_URI=...`
+8. Restart `npm run dev`
 
-```bash
-copy .env.example .env.local
-```
+After signup/login, open Compass with the same URI → database `internee` → collection `users`.
+
+## MongoDB (legacy local notes)
+
+If you previously used a local Compass connection (`mongodb://127.0.0.1:27017`), that is no longer the default. Use Atlas as above.
 
 ## Run
 

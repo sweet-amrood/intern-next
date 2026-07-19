@@ -1,6 +1,12 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/internee";
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  throw new Error(
+    "Missing MONGODB_URI. Set it in .env.local to your MongoDB Atlas connection string.",
+  );
+}
 
 type MongooseCache = {
   conn: typeof mongoose | null;
